@@ -1,0 +1,28 @@
+# Dependency management
+*.jar
+*.war
+*.ear
+
+# Maven
+/target/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+bin/
+
+# Spring Boot
+application.properties
+
+# H2 Database
+*.db
+*.db.*
+
+# OS generated files
+.DS_Store
+Thumbs.db

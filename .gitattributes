@@ -1,0 +1,16 @@
+# Text files
+*.txt text
+*.md text
+*.csv text
+*.properties text
+*.xml text
+*.java text
+
+# Binary files
+*.jar binary
+*.db binary
+
+# IDE files
+.idea/** text eol=lf
+*.iml text eol=lf
+*.ipr text eol=lf
