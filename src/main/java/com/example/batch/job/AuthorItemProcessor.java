@@ -24,7 +24,7 @@ public class AuthorItemProcessor implements ItemProcessor<Author, Author> {
     }
     
     @Override
-    public Author process(Author author) throws Exception {
+    public Author process(Author author) {
         // Check if author already exists in database
         authorRepository.findByName(author.getName())
                 .ifPresent(existingAuthor -> {
@@ -37,7 +37,9 @@ public class AuthorItemProcessor implements ItemProcessor<Author, Author> {
         
         // Add books to author
         for (Book book : books) {
-            author.addBook(book);
+            if (book.getTitle() != null) {
+                author.addBook(book);
+            }
         }
         
         System.out.println("Processed author: " + author.getName() + 

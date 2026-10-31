@@ -40,10 +40,10 @@ public class OpenLibraryService {
             }
             
             // Get the first author's key
-            String authorKey = searchResult.getDocs().get(0).getKey();
+            String authorKey = searchResult.getDocs().stream().findFirst().map(OpenLibraryAuthorDoc::getKey).orElse(null);
             
             // Now get the author's works
-            String worksUrl = authorKey + "/works.json?limit=50";
+            String worksUrl = "/authors/" + authorKey + "/works.json?limit=50";
             OpenLibraryWorksResult worksResult = webClient.get()
                     .uri(worksUrl)
                     .retrieve()
