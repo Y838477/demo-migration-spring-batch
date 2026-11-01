@@ -4,7 +4,7 @@ import com.example.batch.model.Author;
 import com.example.batch.model.Book;
 import com.example.batch.repository.AuthorRepository;
 import com.example.batch.service.OpenLibraryService;
-import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

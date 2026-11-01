@@ -2,10 +2,9 @@ package com.example.batch.job;
 
 import com.example.batch.model.Author;
 import com.example.batch.repository.AuthorRepository;
-import org.springframework.batch.item.Chunk;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.infrastructure.item.Chunk;
+import org.springframework.batch.infrastructure.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class AuthorItemWriter implements ItemWriter<Author> {
     }
 
     @Override
-    public void write(@NonNull Chunk<? extends Author> chunk) {
+    public void write(Chunk<? extends Author> chunk) {
         List<? extends Author> authors = chunk.getItems();
         for (Author author : authors) {
             // Save author with cascade to save all books
