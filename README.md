@@ -92,11 +92,15 @@ The application automatically creates the following tables:
 
 ## Migration Path
 
-This project serves as a baseline for demonstrating upgrade paths:
+The following toolchain is a compatible, staged upgrade path. The Java versions shown are the versions selected for this demonstration, not each Spring Boot line's minimum Java requirement.
 
-1. **Current**: Java 11 + Spring Boot 2.7
-2. **Next Step**: Java 17 + Spring Boot 3.x
-3. **Future**: Java 25 + Spring Boot 4.x (when available)
+| Stage | Spring Boot version | Maven version | Java version |
+|---|---|---|---|
+| Current baseline | [2.7.18](https://docs.spring.io/spring-boot/docs/2.7.18/reference/html/getting-started.html#getting-started.system-requirements) | 3.6.3+ | 11 |
+| Upgrade target | [3.5.x](https://docs.spring.io/spring-boot/3.5/system-requirements.html) | 3.6.3+ | 17 |
+| Future upgrade | [4.1.x](https://docs.spring.io/spring-boot/system-requirements.html) | 3.6.3+ | 21 |
+
+Spring Boot 2.7 supports Maven 3.5 or later; Spring Boot 3.5 and 4.1 require Maven 3.6.3 or later. Maven 3.6.3+ therefore works across all three stages. Java 17 is the minimum for Spring Boot 3.x and 4.x; Java 21 is a compatible choice for the final stage. Check the linked system requirements when selecting the exact Spring Boot release.
 
 ## API Reference
 
