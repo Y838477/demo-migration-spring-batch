@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class SpringBatchAuthorsApplication {
 
     public static void main(String[] args) {
-        System.setProperty("spring.batch.job.enabled", "true");
         SpringApplication.run(SpringBatchAuthorsApplication.class, args);
     }
 }
